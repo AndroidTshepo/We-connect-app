@@ -1,0 +1,30 @@
+<ion-view title="Rating" id="">
+  <ion-content overflow-scroll="true" padding="true" style="background: url(img/434IOQ2SWraEdvokAgBJ_red-and-white.jpg) no-repeat center;" class="has-header">
+    <form class="list"></form>
+    <div class="list card">
+      <div class="item item-divider">Rating</div>
+      <div class="item item-body">
+        <div style="text-align:center;">
+        </div>
+        <div class="spacer" style="width: 268px; height: 21px;"></div>
+        <form class="list">
+          <div id="rating" style="color:#000000;">
+            <img src="img/u0sLVCmLRkeiU8zimBCP_my_logo (36).png" width="100%">
+          </div>
+          starzz
+          <div class="spacer" style="width: 268px; height: 21px;"></div>
+          <div class="ion-ios-star-outline"></div>
+
+          <div class="rating">
+            <a ng-repeat="star in stars">
+              <i class="fa" ng-class="starClass(star, $index)"></i>
+            </a>
+          </div>
+
+          <div class="spacer" style="width: 268px; height: 35px;"></div>
+        </form>
+        <a ui-sref="menu.multipleChoice2" id="multipleChoice-button13" class="button button-calm button-small button-block icon-right ion-android-arrow-dropright">Next</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

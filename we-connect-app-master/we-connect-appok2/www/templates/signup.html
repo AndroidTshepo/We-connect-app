@@ -1,0 +1,42 @@
+<ion-view title="Signup" id="page6" style="background-color:#FDFDFD;">
+    <ion-content overflow-scroll="true" padding="true" style="background: url(img/p.jpg) no-repeat center;" class="has-header">
+        <div style="text-align:center;">
+          <img src="img/We-connect.png"  class="login_logo">
+        </div>
+        <form class="list">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">First Name</span>
+                    <input type="text" placeholder="firstname" ng-model="info.name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Last Name</span>
+                    <input type="text" placeholder="lastname" ng-model="info.last_name">
+                </label>
+
+              <label class="item item-input">
+                <span class="input-label">Cell Number</span>
+                <input type="number" placeholder="0766994846" ng-model="info.phone_n">
+              </label>
+
+              <label class="item item-input">
+                <span class="input-label">Account number</span>
+                <input type="number" placeholder="4666564" ng-model="info.user_account_no">
+              </label>
+
+              <label class="item item-input">
+                <span class="input-label">Card Number</span>
+                <input type="number" placeholder="card 7687668" ng-model="info.user_card_no">
+              </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="" ng-model="info.password">
+                </label>
+
+            </ion-list>
+            <a id="signup-button3" class="button button-positive  button-block" ng-click="signup()">Sign up</a>
+            <button id="signup-button4" class="button button-assertive  button-block" ng-click="back()">Cancel</button>
+        </form>
+    </ion-content>
+</ion-view>

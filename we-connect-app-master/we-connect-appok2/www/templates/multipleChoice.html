@@ -1,0 +1,269 @@
+<ion-view title="Questions" id="page14">
+  <ion-content overflow-scroll="true" padding="true" style="background: url(img/p.jpg) no-repeat center;"
+               class="has-header">
+
+    <div ng-controller="listCrowdSourceCtrl" class="quiz">
+
+      <div class="quiz-area" ng-show="!crowdSourceDone">
+
+        <div class="quiz-area-a" ng-show="multileChoiceQuestOne">
+          <div class="item item-divider"> Choose only one option</div>
+          <div class="item item-body">
+
+            <div class="spacer" style="width: 268px; height: 21px;"></div>
+            <div id="multipleChoice-markdown3" style="color:silver;">
+              <p>{{questionDescription.question_description}}
+                <strong>?</strong>
+                <input type="hidden" value="{{questionDescription.question_id}}" id="questionid">
+              </p>
+            </div>
+            <form>
+              <div class="spacer" style="width: 268px; height: 10px;"></div>
+              <ion-list ng-repeat="option in options">
+                <ion-radio type="radio" ng-model="optio" name="taskGroup{{questionDescription.question_id}}"
+                           ng-click="handleRadioClick(option.option_id,questionDescription.question_id)"
+                           ng-value="{{optionSelection}}">{{option.option_description}}
+                  <ion-list>
+                    <div class="spacer" style="width: 268px; height: 10px;"></div>
+            </form>
+          </div>
+          <div class="spacer" style="width: 268px; height: 10px;"></div>
+          <h5 class="reason">Please Enter the reason for your Choice:</h5>
+          <input type="text" id="raisonForchoice_multileChoiceQuestOne" class="reasons_txt" placeholder="My reason">
+
+          <div class="quiz-area" ng-show="!crowdSourceDone">
+            <a ng-click="nextQuestion(questionDescription.question_id,questionDescription.question_type)"
+               ng-click="otherfunction()"
+               class="button button-calm button-small button-block icon-right ion-android-arrow-dropright">Next</a>
+          </div>
+        </div>
+
+
+        <!-- multiple choice template question  -------------------------------------------->
+
+        <!--<div class="quiz-area-b" ng-show="multileChoiceQuestMutiple">-->
+        <!--<div class="item item-divider"> Choose more than 1 question</div>-->
+        <!--<div class="item item-body" style="margin-top:100px;">-->
+        <!--<div class="spacer" style="width: 268px; height: 21px;"></div>-->
+
+        <!--<div id="multipleChoice-markdown3" style="color:#000000;">-->
+        <!--<p>{{questionDescription.question_description}}-->
+        <!--<strong>?</strong>-->
+        <!--<input type="hidden" value="{{questionDescription.question_id}}" id="questionid">-->
+        <!--</p>-->
+        <!--</div>-->
+
+        <!--<div class="spacer" style="width: 268px; height: 10px;"></div>-->
+        <!--<ion-list ng-repeat="option in options">-->
+        <!--&lt;!&ndash; <input type="radio" name="" ng-model="choices[option.option_id]" value="{{option.option_id}}" />{{option.option_description}} &ndash;&gt;-->
+
+        <!--<ion-radio type="radio" ng-model="optio" name="taskGroup{{questionDescription.question_id}}" ng-click="handleRadioClick(option.option_id,questionDescription.question_id)" ng-value="{{optionSelection}}">{{option.option_description}}-->
+        <!--<ion-list>-->
+        <!--<div class="spacer" style="width: 268px; height: 10px;"></div>-->
+        <!--</div>-->
+        <!--Please Enter the raison for your Choice:-->
+        <!--<input type="text" id="raisonForchoice_multileChoiceQuestMutiple" class="reasons_txt" placeholder="My raison">-->
+        <!--<div class="quiz-area" ng-show="!crowdSourceDone">-->
+        <!--<a ng-click="nextQuestion(questionDescription.question_id,questionDescription.question_type)" class="button button-calm button-small button-block icon-right ion-android-arrow-dropright">Next</a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!-- rate  template question  -------------------------------------------->
+
+        <div class="quiz-area-c" ng-show="rate_question_text">
+          <div class="item item-divider"> Rate This Text</div>
+          <div class="item item-body" style="margin-top:100px;">
+            <div style="text-align:center;"></div>
+            <div class="spacer" style="width: 268px; height: 21px;"></div>
+            <div id="rating" style="color:#000000;">
+              {{questionDescription.question_description}}
+            </div>
+            <div class="spacer" style="width: 268px; height: 21px;"></div>
+
+            <div class="rating">
+              <a>
+                <i class="fa"></i>
+              </a>
+
+            </div>
+            <input name="rating" value="0" id="rating_star_text" type="hidden" postID="1"/>
+            <input name="rating" value={{questionDescription.question_id}} id="rating_star_textoption"
+                   class="rating_star_textoption" type="hidden" postID="1"
+                   placeholder="{{questionDescription.question_id}}"/>
+
+            <div class="spacer" style="width: 268px; height: 35px;"></div>
+
+          </div>
+          <div class="spacer" style="width: 268px; height: 10px;"></div>
+          <h5 class="reason">Please Enter the reason for your Choice:</h5>
+          <input type="text" id="raisonForchoice_rate_question_text" class="reasons_txt" placeholder="My reason">
+
+          <div class="quiz-area" ng-show="!crowdSourceDone">
+            <a ng-click="nextQuestion(questionDescription.question_id,questionDescription.question_type)"
+               class="button button-calm button-small button-block icon-right ion-android-arrow-dropright">Next</a>
+          </div>
+        </div>
+
+
+        <div class="quiz-area-d" ng-show="rate_question_image">
+
+          <div class="item item-divider"> Rate This Image</div>
+          <div class="item item-body" style="margin-top:100px;">
+            <div style="text-align:center;"></div>
+            <div class="spacer" style="width: 268px; height: 21px;"></div>
+            <div id="rating" style="color:#000000;">
+              {{questionDescription.question_description}}
+            </div>
+            <div class="spacer" style="width: 268px; height: 21px;"></div>
+            <div style="text-align:center;">
+              <ion-list ng-repeat="option in options">
+                <img src="{{option.option_description}}" width="50%" height="50%">
+              </ion-list>
+            </div>
+            <input name="rating" value="0" id="rating_star_image" type="hidden" postID="2"/>
+            <input name="rating" value="questionDescription.question_id" id="rating_star_imageoption" type="hidden"
+                   postID="1"/>
+
+            <div class="spacer" style="width: 268px; height: 35px;"></div>
+          </div>
+          <div class="option_controls">
+            <h5 class="reason">Please Enter the reason for your Choice:</h5>
+            <input class="reasons_txt" type="text"  id="raisonForchoice_rate_rate_question_image" placeholder="My reason">
+
+            <div class="quiz-area" ng-show="!crowdSourceDone">
+              <a ng-click="nextQuestion(questionDescription.question_id,questionDescription.question_type)"
+                 class="button button-calm button-small button-block icon-right ion-android-arrow-dropright">Next</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="quiz-area-e" ng-show="true_false_question">
+          <div class="list card list_card" style="margin-top:100px;">
+            <div class="item item-divider"> Choose True or False</div>
+            <div class="item item-body q_o_holder">
+              <div style="text-align:center;"></div>
+
+              <div class="spacer" style="width: 268px; height: 21px;"></div>
+              <form class="list ">
+                <div id="true_false" style="color:#000000;">
+                  <h3 style="color:white;">{{questionDescription.question_description}}
+                  </h3>
+                </div>
+                <div class="spacer" style="width: 268px; height: 10px;"></div>
+                <ion-list ng-repeat="option in options">
+                  <ion-radio type="radio" ng-model="optio" name="taskGroup{{questionDescription.question_id}}"
+                             ng-click="handleRadioClick(option.option_id,questionDescription.question_id)"
+                             ng-value="{{optionSelection}}">{{option.option_description}}
+                    <ion-list>
+                      <div class="spacer" style="width: 268px; height: 10px;"></div>
+              </form>
+            </div>
+          </div>
+          <div class="spacer" style="width: 268px; height: 10px;"></div>
+          <div class="option_controls">
+            <h5 class="reason">Please Enter the reason for your Choice:</h5>
+            <input type="text" id="raisonForchoice_true_false_question" class="reasons_txt" placeholder="My reason">
+            <!--<div class="quiz-area" ng-show="!crowdSourceDone">-->
+            <a ng-click="nextQuestion(questionDescription.question_id,questionDescription.question_type)"
+               class="button button-calm button-small button-block icon-right ion-android-arrow-dropright">Next</a>
+            <!--</div>-->
+          </div>
+        </div>
+
+        <div class="quiz-area-f" ng-show="choose_One_picture_question">
+
+          <div class="item item-divider"> Choose one of These Images</div>
+          <div class="item item-body" style="margin-top:100px;">
+            <div style="text-align:center;"></div>
+            <div class="spacer" style="width: 268px; height: 21px;"></div>
+            <div id="rating" style="color:#000000;">
+              {{questionDescription.question_description}}
+            </div>
+            <div class="spacer" style="width: 268px; height: 21px;"></div>
+            <div style="text-align:center;">
+              <ion-list ng-repeat="option in options">
+                <div class="tick_img">
+                  <!--<input type="checkbox" ng-model="boxClass" class="fun_checkbox" />-->
+                  <ion-radio type="radio" ng-model="optio" name="taskGroup{{questionDescription.question_id}}"
+                             ng-click="handleRadioClick(option.option_id,questionDescription.question_id)"
+                             ng-value="{{optionSelection}}">
+                    <img src="{{option.option_description}}" width="50%" height="50%">
+                    <!--<class="box rotate fancyy"-->
+                    <!--<ng-class="{'box': !boxClass, 'circle': boxClass} ">-->
+
+                  <script>
+
+                   // alert('selected');
+
+                  </script>
+                </div>
+              </ion-list>
+            </div>
+
+            <div class="spacer" style="width: 268px; height: 35px;"></div>
+            <div class="option_controls">
+          </div>
+          <h5 class="reason">Please Enter the reason for your Choice:</h5>
+          <input type="text" id="raisonForchoice_choose_One_picture_question" class="reasons_txt"
+                 placeholder="My reason">
+
+          <div class="quiz-area" ng-show="!crowdSourceDone">
+            <a ng-click="nextQuestion(questionDescription.question_id,questionDescription.question_type)"
+               class="button button-calm button-small button-block icon-right ion-android-arrow-dropright">Next</a>
+          </div>
+          </div>
+        </div>
+
+        <div class="quiz-area-g" ng-show="choose_Multiple_picture_question">
+          <div class="item item-divider"> Rate These Images</div>
+          <div class="item item-body" style="margin-top:100px;">
+            <div style="text-align:center;"></div>
+            <div class="spacer" style="width: 268px; height: 21px;"></div>
+            <div id="rating" style="color:#000000;">
+              {{questionDescription.question_description}}
+            </div>
+            <div class="spacer" style="width: 268px; height: 21px;"></div>
+            <div style="text-align:center;">
+              <div class="row responsive-md">
+                <ion-list class="col col-25" ng-repeat="option in options">
+                  <input type="checkbox" ng-model="boxClass" />
+                  <div class="box rotate" ng-class="{'box': boxClass, 'circle': !boxClass} ">
+                  <a ng-model="optio" name="taskGroup{{questionDescription.question_id}}"
+                     ng-click="handleRadioClick(option.option_id,questionDescription.question_id)"
+                     ng-value="{{optionSelection}}"><img src="{{option.option_description}}" width="50%" height="50%">
+                  </a>
+                    </div>
+                </ion-list>
+              </div>
+            </div>
+            <div class="spacer" style="width: 268px; height: 35px;"></div>
+          </div>
+          <div class="option_controls">
+          <h5 class="reason">Please enter the reason for your choice:</h5>
+          <input type="text" id="raisonForchoice_choose_Multiple_picture_question" placeholder="My reason" class="reasons_txt">
+
+          <div class="quiz-area" ng-show="!crowdSourceDone">
+            <a ng-click="nextQuestion(questionDescription.question_id,questionDescription.question_type)"
+               class="button button-calm button-small button-block icon-right ion-android-arrow-dropright">Next</a>
+          </div>
+            </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="quiz-area" ng-show="crowdSourceDone">
+        <a ng-click="sumitCrowdSourceAnwsers()"
+           class="button button-calm button-small button-block icon-right ion-android-arrow-dropright"><label
+          style="color:yellow">SUBMIT CROWDSOURCE DETAILS<label></a>
+      </div>
+
+      <div class="intro" ng-show="inProgress" style="margin-top:100px;">
+        <h4>Thanks for choosing to participate to our CrowdSource</h4>
+        <button id="startQuiz" class="startbtn" ng-click="start()">Start</button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

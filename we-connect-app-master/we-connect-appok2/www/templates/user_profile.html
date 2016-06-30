@@ -1,0 +1,31 @@
+<ion-view title="My Profile" id="profile" style="background-color:#FDFDFD;" header="My Profile">
+  <ion-content overflow-scroll="true" padding="true" style="background: url(img/JbYunuRHQCOVkomGQeF1_red-and-white.jpg) no-repeat center;" class="has-header">
+    <div class="profile_img_holder">
+      <img src="img/ED.jpg" class="profile_img">
+      <div class="profile_names">
+      <h4 class="name_h">ED</h4>
+      <h5 class="name_h">WREDE</h5>
+      </div>
+    </div>
+    <form class="list" style="padding: 10px">
+        <label class="item item-input">
+          <input type="number" placeholder="0766994846" ng-model="info.phone_n">
+        </label>
+
+        <label class="item item-input">
+          <input type="number" placeholder="4666564" ng-model="info.user_account_no">
+        </label>
+
+        <label class="item item-input">
+          <input type="number" placeholder="card 7687668" ng-model="info.user_card_no">
+        </label>
+
+        <label class="item item-input">
+          <input type="password" placeholder="This is my password" ng-model="info.password" onfocusout="">
+        </label>
+
+      </ion-list>
+      <a id="signup-button3" class="button button-positive  button-block" ng-click="signup()">Update</a>
+    </form>
+  </ion-content>
+</ion-view>

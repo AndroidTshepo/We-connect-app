@@ -1,0 +1,67 @@
+<ion-view title="Main Menu" id="app_menu">
+  <ion-content overflow-scroll="true" padding="true" style="background: url(img/p.jpg) no-repeat center;" class="has-header">
+    <!--<ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Back | </ion-nav-back-button>-->
+    <!--<ion-list>-->
+    <!--<ion-item class="item-thumbnail-left cs_holder"><img src="img/icon_cs.png"class="icon_cs"><h2 class="cs_name">Crowd Source 1</h2></ion-item>-->
+    <!--<br>-->
+    <!--<ion-item class="item-thumbnail-left"><img src="img/icon_cs.png"class="icon_cs">Crowd Source 2</ion-item>-->
+    <!--<br>-->
+    <!--<ion-item ui-sref="menu.page1" class="item-thumbnail-left"><img src="img/icon_cs.png"class="icon_cs">Crowd Source 3</ion-item>-->
+
+    <!--</ion-list>-->
+    <div class="row incoming">
+
+    <div class="add_show">
+      <video autoplay cover="" >
+        <source src="img/add.mp4" type="video/webm">
+      </video>
+    </div>
+
+
+      <ion-item class="item-thumbnail-left extra_f_icon" ng-click="locateAbsa()">
+        <img src="img/atm.png" class="img">
+        <p class="m_head">Locate ATM</p>
+      </ion-item>
+
+      <ion-item class="item-thumbnail-left extra_f_icon" ng-click="locateshop()">
+        <img src="img/shop_white.png" class="img">
+
+        <p class="m_head">Locate Shop</p>
+      </ion-item>
+
+    </div>
+    <!--<img src="img/main_logo.png" class="img_middle  animated infinite pulse" ng-click="listCrowdSource()">-->
+
+    <button class="button button-full button-positive" ng-click="listCrowdSource();showloading()">
+      Start Crowd Source
+    </button>
+    <!--<div class="row incoming_bottom">-->
+
+      <!--<ion-item class="item-thumbnail-left extra_f_icon" ng-click="soccerlist()">-->
+        <!--<img src="img/sp.png" class="img">-->
+        <!--<p class="m_head">Sports News</p>-->
+      <!--</ion-item>-->
+
+      <!--<ion-item class="item-thumbnail-left extra_f_icon" ng-click="business()">-->
+        <!--<img src="img/business.png" class="img">-->
+        <!--<p class="m_head">Business News</p>-->
+      <!--</ion-item>-->
+      <!--</div>-->
+
+
+
+
+  </ion-content>
+  <!--<ion-tabs class="tabs-positive tabs-icon-top">-->
+
+    <!--<ion-tab title="Profile" icon-on="ion-ios-person-outline" icon-off="ion-ios-person-outline" ng-click="profile()">-->
+      <!--&lt;!&ndash; Tab 1 content &ndash;&gt;-->
+    <!--</ion-tab>-->
+
+
+    <!--<ion-tab title="AboutUs" icon-on="ion-information" icon-off="ion-information" >-->
+      <!--&lt;!&ndash; Tab 3 content &ndash;&gt;-->
+    <!--</ion-tab>-->
+
+  </ion-tabs>
+</ion-view>

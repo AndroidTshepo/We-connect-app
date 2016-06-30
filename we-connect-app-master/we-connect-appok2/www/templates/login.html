@@ -1,0 +1,41 @@
+<ion-view title-assertive title="Login" id="">
+  <ion-content overflow-scroll="true" padding="true" style="background: url(img/p.jpg) no-repeat center;-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;"
+               style="background: url(img/gLl4L5TCRfutcdVN97LB_red-and-white.jpg) no-repeat center;" class="has-header">
+
+    <div class="login_logo_holder">
+      <img src="img/We-connect.png"  class="login_logo">
+      <div class="logo_text">we-connect</div>
+    </div>
+    <form class="list login_form">
+      <ion-list>
+
+        <label class="item item-input login_input" name="username">
+          <span class="input-label">Username</span>
+          <input type="text" placeholder="" ng-model="info.username">
+        </label>
+
+        <label class="item item-input login_input" name="password">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="********" ng-model="info.password">
+        </label>
+
+      </ion-list>
+      <div class="spacer" style="width: 300px; height: 20px;"></div>
+      <!--ui-sref="menu.page1"-->
+      <a id="login-button1" style="color:#F3F0F0;"
+         class="button button-calm  button-block icon-right ion-android-arrow-forward" ng-click="Login(info);showloading()">Log in</a>
+      <a ui-sref="signup" id="login-button6" style="color:#F3F0F0;"
+         class="button button-positive  button-block icon-right ion-android-person-add">Create Account</a>
+
+      <div class="spacer" style="width: 300px; height: 8px;"></div>
+    </form>
+    <div class="spacer" style="width: 300px; height: 45px;"></div>
+    <div class="dim">
+    <a ui-sref="recoverPassword" id="login-button7" class="button button-light button-small button-block button-clear">Forgot
+      password?</a>
+      </div>
+  </ion-content>
+</ion-view>

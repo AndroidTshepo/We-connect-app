@@ -1,0 +1,25 @@
+<ion-view  title="List of Crowd Source" id="" header="List_Crowd_Source" >
+
+
+  <ion-content overflow-scroll="true" padding="true" style="background: url(img/p.jpg) no-repeat center;" class="has-header">
+  <!--<ion-content overflow-scroll="true" padding="true" style="background: url(img/434IOQ2SWraEdvokAgBJ_red-and-white.jpg) no-repeat center;"  class="has-header" >-->
+  <div ng-controller="listCrowdSourceCtrl" >
+
+			<ion-list ng-repeat="cname in crowdname">
+			  <ion-item class="item-thumbnail-left crowd_source_holder" ng-click="storeCrowdSourceNAme(cname)"><img src="img/icon_cs.png"><h2></h2><br>{{cname}}
+          <div class="indicator">
+          <label class="toggle toggle-assertive">
+            <input type="checkbox">
+            <div class="track"></div>
+          </label>
+          </div>
+
+        </ion-item><br>
+			</ion-list>
+    <div>
+    <ion-button class="button  button-icon icon back_btn" ng-click="back()" >Back | </ion-button>
+    <!--<input type="button" value="back">-->
+    </div>
+	</div>
+  </ion-content>
+</ion-view>

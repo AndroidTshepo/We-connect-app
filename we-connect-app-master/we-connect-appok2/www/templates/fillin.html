@@ -1,0 +1,23 @@
+<ion-view title="Fill In" id="fillin">
+  <ion-content overflow-scroll="true" padding="true" style="background: url(img/434IOQ2SWraEdvokAgBJ_red-and-white.jpg) no-repeat center;" class="has-header">
+    <form class="list"></form>
+    <div class="list card">
+      <div class="item item-divider">Fill in one Word</div>
+      <div class="item item-body">
+        <div style="text-align:center;">
+        </div>
+        <div class="spacer" style="width: 268px; height: 21px;"></div>
+        <form class="list">
+          <div id="fillin" style="color:#000000;">
+            <p>Barclays is the [{{fillin_txt}}] Bank in South Africa
+            </p>
+          </div>
+          <div class="spacer" style="width: 268px; height: 21px;"></div>
+          <input type="search" ng-model="fillin_txt" name="option" placeholder="fill in">
+          <div class="spacer" style="width: 268px; height: 35px;"></div>
+        </form>
+        <a ui-sref="menu.multipleChoice2" id="multipleChoice-button13" class="button button-calm button-small button-block icon-right ion-android-arrow-dropright">Next</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

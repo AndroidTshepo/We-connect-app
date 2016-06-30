@@ -1,0 +1,14 @@
+<ion-view title="Sports List" id="page10">
+    <ion-content overflow-scroll="true" padding="false" class="has-header">
+      <ion-list ng-repeat="post in posts">
+        <a class="item item-avatar-left list-news" ng-click=showPopup(post)>
+          <img src="img/sports_images.gif">
+          <h2>{{post.title}}</h2>
+          <p>{{post.content}}</p>
+        </a>
+      </ion-list>
+
+    </ion-content>
+</ion-view>
+
+
